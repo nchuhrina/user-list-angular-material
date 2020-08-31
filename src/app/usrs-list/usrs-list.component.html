@@ -1,0 +1,34 @@
+
+<h2>Users List</h2>
+<p>Angular</p>
+<div class="filters">
+  <mat-form-field appearance="outline" >
+    <mat-label>sort users</mat-label>
+    <mat-select #select (selectionChange)="sort(select.value)">
+      <mat-option value="1">A-Z</mat-option>
+      <mat-option value="2">Z-A</mat-option>
+      <mat-option value="b">Base</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<mat-form-field class="example-full-width" >
+  <mat-label>Search by name</mat-label>
+  <input matInput placeholder="enter name" #qwery (keyup.enter)="search(qwery.value)">
+  <mat-icon matSuffix (click)="search(qwery.value)">search</mat-icon>
+</mat-form-field>
+</div>
+
+<p> Options selected: {{user.selectedOptions.selected.length}}</p>
+
+<mat-selection-list #user >
+  <div class="list" *ngFor="let user of usersList; let i = index">
+    <mat-list-option>
+      <div [ngClass]="{'adm': i%2 }">{{i}}
+        <div> <span>{{user.name+' '}}</span>
+          <span>{{'  e-mail:'+user.email}}</span></div>
+        <mat-card-content>{{'phone:'+user.phone}} <span *ngIf="user.role === 'Admin'">  Admin</span></mat-card-content>
+      </div>
+    </mat-list-option>
+  </div>
+  <mat-divider></mat-divider>
+</mat-selection-list>

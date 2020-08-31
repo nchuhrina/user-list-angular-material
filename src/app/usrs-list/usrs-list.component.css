@@ -1,0 +1,32 @@
+.filters{
+  display: flex;
+  justify-content: space-around;
+}
+mat-icon{
+  cursor: pointer;
+  color: grey;
+}
+mat-icon:hover{
+
+  color: silver;
+}
+mat-card-subtitle, mat-card-content {
+  margin: 1px;
+}
+
+mat-list-option{
+  padding: 10px;
+  margin-top: 10px;
+  width: 200px;
+  box-sizing: content-box;
+}
+.list{
+  width: 500px;
+  margin: 10px auto;
+
+}
+.adm {
+  color: blue;
+  font-weight: bolder;
+background-color: gainsboro;
+}
